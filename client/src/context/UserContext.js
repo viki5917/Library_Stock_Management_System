@@ -33,13 +33,16 @@ export const UserContextProvider = ({ children }) => {
   const registerUser = async (userData) => {
     try {
       setLoader(true);
-      const res = await fetch(`http://localhost:8000/api/user/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({ ...userData }),
-      });
+      const res = await fetch(
+        `https://librarydatabase-backend.onrender.com/api/user/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify({ ...userData }),
+        }
+      );
 
       const result = await res.json();
 
@@ -65,13 +68,16 @@ export const UserContextProvider = ({ children }) => {
   const verifyUser = async (userData) => {
     try {
       setLoader(true);
-      const res = await fetch("http://localhost:8000/api/user/verifyotp", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify({ ...userData }),
-      });
+      const res = await fetch(
+        "https://librarydatabase-backend.onrender.com/api/user/verifyotp",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({ ...userData }),
+        }
+      );
       const result = await res.json();
 
       if (!result.error) {
@@ -94,7 +100,7 @@ export const UserContextProvider = ({ children }) => {
     try {
       setLoader(true);
       const res = await fetch(
-        "http://localhost:8000/api/user/resendverifyotp",
+        "https://librarydatabase-backend.onrender.com/api/user/resendverifyotp",
         {
           method: "POST",
           headers: {
@@ -126,13 +132,16 @@ export const UserContextProvider = ({ children }) => {
   const forgetPassword = async (userData) => {
     try {
       setLoader(true);
-      const res = await fetch("http://localhost:8000/api/user/forgetpassword", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify({ ...userData }),
-      });
+      const res = await fetch(
+        "https://librarydatabase-backend.onrender.com/api/user/forgetpassword",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({ ...userData }),
+        }
+      );
       const result = await res.json();
 
       if (!result.error) {
@@ -157,13 +166,16 @@ export const UserContextProvider = ({ children }) => {
   const resetPassword = async (userData) => {
     try {
       setLoader(true);
-      const res = await fetch("http://localhost:8000/api/user/resetpassword", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...userData }),
-      });
+      const res = await fetch(
+        "https://librarydatabase-backend.onrender.com/api/user/resetpassword",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...userData }),
+        }
+      );
       const result = await res.json();
 
       if (!result.error) {
@@ -184,13 +196,16 @@ export const UserContextProvider = ({ children }) => {
   const loginUser = async (userData) => {
     try {
       setLoader(true);
-      const res = await fetch("http://localhost:8000/api/user/login", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify({ ...userData }),
-      });
+      const res = await fetch(
+        "https://librarydatabase-backend.onrender.com/api/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({ ...userData }),
+        }
+      );
       const result = await res.json();
 
       if (!result.error) {
@@ -220,12 +235,15 @@ export const UserContextProvider = ({ children }) => {
   const checkUserLogggedIn = async () => {
     try {
       setLoader(true);
-      const res = await fetch("http://localhost:8000/api/user/currentuser", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await fetch(
+        "https://librarydatabase-backend.onrender.com/api/user/currentuser",
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       const result = await res.json();
 
       if (!result.error) {

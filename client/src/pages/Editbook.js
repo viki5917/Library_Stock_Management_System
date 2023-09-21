@@ -30,12 +30,15 @@ const Editbook = () => {
     (async () => {
       setLoader(true);
       try {
-        const res = await fetch(`http://localhost:8000/api/admin/book/${id}`, {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const res = await fetch(
+          `https://librarydatabase-backend.onrender.com/api/admin/book/${id}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         const result = await res.json();
         if (!result.error) {
           setCredentials({
@@ -92,13 +95,16 @@ const Editbook = () => {
 
     try {
       setLoader(true);
-      const res = await fetch(`http://localhost:8000/api/admin/updatebook`, {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: form,
-      });
+      const res = await fetch(
+        `https://librarydatabase-backend.onrender.com/api/admin/updatebook`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: form,
+        }
+      );
       const result = await res.json();
       if (!result.error) {
         toast.success(`Book ${credentials.title} updated successfully`);

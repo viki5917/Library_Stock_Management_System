@@ -15,12 +15,15 @@ const Allusers = () => {
     (async () => {
       setLoader(true);
       try {
-        const res = await fetch(`http://localhost:8000/api/admin/allusers`, {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const res = await fetch(
+          `https://librarydatabase-backend.onrender.com/api/admin/allusers`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         const result = await res.json();
         if (!result.error) {
           setAllUsers(result.allusers);

@@ -20,12 +20,15 @@ const Adminhome = () => {
     (async () => {
       setLoader(true);
       try {
-        const res = await fetch(`http://localhost:8000/api/user/allbooks`, {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const res = await fetch(
+          `https://librarydatabase-backend.onrender.com/api/user/allbooks`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         const result = await res.json();
         if (!result.error) {
           setAllBooks(result.myBooks);
@@ -80,7 +83,7 @@ const Adminhome = () => {
                       <div className="card">
                         <div className="image">
                           <img
-                            src={`http://localhost:8000/uploads/${book.photo}`}
+                            src={`https://librarydatabase-backend.onrender.com/uploads/${book.photo}`}
                           />
                         </div>
                         <h3>{book.title}</h3>
@@ -106,7 +109,7 @@ const Adminhome = () => {
             </div>
             <div className="modalImage">
               <img
-                src={`http://localhost:8000/uploads/${modalData.photo}`}
+                src={`https://librarydatabase-backend.onrender.com/uploads/${modalData.photo}`}
                 alt={modalData.title}
               />
             </div>

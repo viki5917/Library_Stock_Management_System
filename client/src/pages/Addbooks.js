@@ -48,13 +48,16 @@ const Addbooks = () => {
 
     try {
       setLoader(true);
-      const res = await fetch(`http://localhost:8000/api/admin/addbook`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: form,
-      });
+      const res = await fetch(
+        `https://librarydatabase-backend.onrender.com/api/admin/addbook`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: form,
+        }
+      );
       const result = await res.json();
       if (!result.error) {
         toast.success(`Book ${credentials.title} added successfully`);
