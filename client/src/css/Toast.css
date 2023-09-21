@@ -1,0 +1,15 @@
+@import url("https://db.onlinewebfonts.com/c/94d0c168186efde5fbe01b186e80e27e?family=Old+newspaper+font");
+.Toastify__toast {
+  border: 3px solid;
+  font-family: "Old newspaper font" !important;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px !important;
+  color: black;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  background-color: rgb(243, 235, 235);
+}

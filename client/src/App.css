@@ -1,0 +1,55 @@
+@import url("https://db.onlinewebfonts.com/c/94d0c168186efde5fbe01b186e80e27e?family=Old+newspaper+font");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Old newspaper font";
+  background: linear-gradient(
+      rgba(243, 235, 235, 0.8),
+      rgba(243, 235, 235, 0.8)
+    ),
+    url("children-1941336_1920.png");
+  background-size: 400px;
+  background-attachment: fixed;
+}
+
+.container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+input,
+button {
+  background: linear-gradient(
+      rgba(243, 235, 235, 0.8),
+      rgba(243, 235, 235, 0.8)
+    ),
+    url("children-1941336_1920.png");
+  background-size: 500px;
+  background-attachment: fixed;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: black;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-animation-fill-mode: both;
+}
+@media (max-width: 769px) {
+  .container {
+    min-height: 80vh;
+    padding: 10px 20px;
+  }
+}

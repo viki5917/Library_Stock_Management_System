@@ -1,0 +1,126 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@700&display=swap"); */
+@font-face {
+  font-family: "Chomsky";
+  src: url("../fonts/chomsky/Chomsky.otf") format("otf"),
+    url("../fonts/chomsky/Chomsky.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+nav {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  /* font-family: "Libre Caslon Text", serif; */
+}
+nav h1 {
+  font-family: "Chomsky";
+  font-size: 30px;
+}
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar li {
+  list-style-type: none;
+  padding: 0px 20px;
+  position: relative;
+}
+#navbar li a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+
+#navbar li a.active::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+#mobile {
+  display: none;
+}
+#mobile i {
+  align-items: center;
+}
+
+.logout-button {
+  font-family: "Old newspaper font";
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  background-color: rgb(243, 235, 235);
+}
+
+.logout-button:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media screen and (max-width: 769px) {
+  nav {
+    padding: 20px 50px;
+  }
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 75px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.06);
+    padding: 40px 0 0 30px;
+    transition: 0.3s ease-in-out;
+  }
+  #navbar li {
+    margin-bottom: 25px;
+  }
+  #navbar.active {
+    right: 0px;
+    background: linear-gradient(
+        rgba(241, 234, 234, 0.8),
+        rgba(238, 227, 227, 0.8)
+      ),
+      url("../children-1941336_1920.png");
+    background-size: 500px;
+    z-index: 999;
+  }
+  #mobile {
+    display: block;
+  }
+  #mobile i {
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) {
+  .logout-button {
+    padding: 0.25em 0.75em;
+  }
+}
