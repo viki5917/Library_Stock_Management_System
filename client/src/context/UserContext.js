@@ -251,7 +251,8 @@ export const UserContextProvider = ({ children }) => {
         if (result.currentuser.email === "library5917@gmail.com") {
           if (
             location.pathname === "/login" ||
-            location.pathname === "/register"
+            location.pathname === "/register" ||
+            location.pathname === "/"
           ) {
             setTimeout(() => {
               navigate("/adminhome", { replace: true });
@@ -264,7 +265,8 @@ export const UserContextProvider = ({ children }) => {
         } else {
           if (
             location.pathname === "/login" ||
-            location.pathname === "/register"
+            location.pathname === "/register" ||
+            location.pathname === "/"
           ) {
             setTimeout(() => {
               navigate("/userhome", { replace: true });
